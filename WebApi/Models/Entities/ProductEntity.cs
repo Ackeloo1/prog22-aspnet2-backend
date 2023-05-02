@@ -16,5 +16,5 @@ public class ProductEntity
 	public int StarRating { get; set; }
 	public string? ImageURL { get; set; }
 
-	public CategoryEntity Category { get; set; }
+	public CategoryEntity Category { get; set; } = null!;
 }

@@ -5,7 +5,7 @@ namespace WebApi.Models.Entities;
 public class CategoryEntity
 {
 	[Key]
-	public int Id { get; set; }
+	public int CategoryId { get; set; }
 	public string CategoryName { get; set; } = null!;
 
 	public ICollection<ProductEntity> Products { get; set; } = new HashSet<ProductEntity>();
