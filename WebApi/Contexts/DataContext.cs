@@ -15,6 +15,6 @@ namespace WebApi.Contexts
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<PaymentMethodEntity> PaymentMethods { get; set; }
         public DbSet<OrderEntity> Orders { get; set; }
-        public DbSet<ReviewEntity> Reviews { get; set; }
+        public DbSet<ReviewsEntity> Reviews { get; set; }
     }
 }
