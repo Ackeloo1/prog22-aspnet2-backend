@@ -9,7 +9,13 @@ namespace WebApi.Contexts
         {
         }
 
-        public DbSet<ProductEntity> Products { get; set; }
+		protected override void OnConfiguring
+	   (DbContextOptionsBuilder optionsBuilder)
+		{
+			optionsBuilder.UseInMemoryDatabase(databaseName: "MemoryDb");
+		}
+
+		public DbSet<ProductEntity> Products { get; set; }
 		public DbSet<CategoryEntity> Categories { get; set; }
         public DbSet<AddressEntity> Addresses { get; set; }
         public DbSet<UserEntity> Users { get; set; }
