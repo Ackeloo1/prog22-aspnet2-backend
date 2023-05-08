@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Models.DTOs;
 using WebApi.Models.Entities;
 using WebApi.Services;
 
@@ -38,7 +39,7 @@ public class AddressController : ControllerBase
 
 	[HttpPost]
 	[Route("Create")]
-	public async Task<IActionResult> CreateAddress(AddressEntity model)
+	public async Task<IActionResult> CreateAddress(AddressCreateDTO model)
 	{
 		if (ModelState.IsValid)
 		{
