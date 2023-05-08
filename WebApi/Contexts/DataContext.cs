@@ -12,7 +12,7 @@ namespace WebApi.Contexts
 		protected override void OnConfiguring
 	   (DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseInMemoryDatabase(databaseName: "BookingDb");
+			optionsBuilder.UseInMemoryDatabase(databaseName: "MemoryDb");
 		}
 
 		public DbSet<ProductEntity> Products { get; set; }
