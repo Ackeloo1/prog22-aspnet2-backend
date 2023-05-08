@@ -9,12 +9,18 @@ namespace WebApi.Contexts
         {
         }
 
-        public DbSet<ProductEntity> Products { get; set; }
+		protected override void OnConfiguring
+	   (DbContextOptionsBuilder optionsBuilder)
+		{
+			optionsBuilder.UseInMemoryDatabase(databaseName: "BookingDb");
+		}
+
+		public DbSet<ProductEntity> Products { get; set; }
 		public DbSet<CategoryEntity> Categories { get; set; }
         public DbSet<AddressEntity> Addresses { get; set; }
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<PaymentMethodEntity> PaymentMethods { get; set; }
         public DbSet<OrderEntity> Orders { get; set; }
-        public DbSet<ReviewEntity> Reviews { get; set; }
+        public DbSet<ReviewsEntity> Reviews { get; set; }
     }
 }
