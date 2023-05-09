@@ -9,8 +9,13 @@ public class CategoryRepo : BaseRepo<CategoryEntity, DataContext>
 	{
 	}
 
-	public async Task<CategoryEntity> GetCategoryAsync(string categoryName)
+	public async Task<CategoryEntity> GetByNameAsync(string categoryName)
 	{
 		return await base.GetAsync(x => x.CategoryName == categoryName);
+	}
+
+	public async Task<CategoryEntity> GetByIdAsync(int categoryId)
+	{
+		return await base.GetAsync(x => x.CategoryId == categoryId);
 	}
 }

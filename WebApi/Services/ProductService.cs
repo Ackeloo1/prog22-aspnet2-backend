@@ -1,4 +1,5 @@
-﻿using WebApi.Models.Entities;
+﻿using WebApi.Models.DTOs;
+using WebApi.Models.Entities;
 using WebApi.Repos;
 
 namespace WebApi.Services
@@ -31,9 +32,11 @@ namespace WebApi.Services
 			return await _productRepo.GetByIdAsync(id);
 		}
 
-		public async Task<ProductEntity> AddAsync(ProductEntity entity)
+		public async Task<ProductEntity> AddAsync(ProductCreateDTO dto)
 		{
-			return await _productRepo.AddAsync(entity);
+			ProductEntity entity = dto;
+			entity.Category = await _categoryRepo.GetByIdAsync(dto.CategoryId);
+			return await _productRepo.AddAsync(dto);
 		}
 	}
 }
